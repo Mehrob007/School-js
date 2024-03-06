@@ -602,13 +602,9 @@ const arr =
           "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
         }
       ]
-    //"userId": 1,
-    //"id": 1,
-    //"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    //"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-    
-    function gPostsContent(posts) {
-            posts.map((el) => {
+
+    function gPostsContent(arr) {
+            arr.map((el) => {
                 const main = document.createElement('main')
                 const div = document.createElement('div')
                 const h1 = document.createElement('h1')
@@ -618,20 +614,18 @@ const arr =
                 main.classList.add(`${"arr" + el.id}`)
                 main.classList.add("post")
                
-                
-            
+                div.classList.add(`${"id-" + el.id}`)
+                h1.classList.add(`${"userId-" + el.id}`)
+                h2.classList.add(`${"title-" + el.id}`)
+                p.classList.add(`${"body-" + el.id}`)
+
                 div.textContent = el.id,
                 h1.textContent = el.userId
                 h2.textContent = el.title
                 p.textContent = el.body
 
-                
-
-                
-
                 root.appendChild(main)
                 
-
                 main.appendChild(div)
                 main.appendChild(h1)
                 main.appendChild(h2)
